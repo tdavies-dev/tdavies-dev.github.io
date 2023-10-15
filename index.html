@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        #header, #subheader, #mainText, #typedText {
+            display: none; /* Hide all text initially */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Tomos Davies - Portfolio Website</h1>
+    <h2 id="subheader">Data Scientist</h2>
+    <p id="mainText">This is the main body text.</p>
+
+    <div class="terminal">
+        <div class="line">
+            <p id="typedText"></p>
+            <span id="cursor">|</span>
+        </div>
+    </div>
+
+    <script>
+        function typeText(element, text, speed) {
+            element.style.display = "block"; // Display the element before typing
+            element.textContent = ''; // Clear the initial content
+            let index = 0;
+            function type() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const headerElement = document.getElementById("header");
+            const subheaderElement = document.getElementById("subheader");
+            const mainTextElement = document.getElementById("mainText");
+            const textElement = document.getElementById("typedText");
+            const cursorElement = document.getElementById("cursor");
+            
+            // Call the typewriter function for header, subheader, and mainText
+            typeText(headerElement, headerElement.textContent, 30);
+            typeText(subheaderElement, subheaderElement.textContent, 30);
+            typeText(mainTextElement, mainTextElement.textContent, 30);
+            
+            // Add the blinking cursor
+            function blinkCursor() {
+                cursorElement.style.display = cursorElement.style.display === "none" ? "inline" : "none";
+            }
+            setInterval(blinkCursor, 500);
+        });
+    </script>
+</body>
+</html>

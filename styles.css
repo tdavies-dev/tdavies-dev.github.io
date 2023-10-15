@@ -1,0 +1,42 @@
+/* Reset default margin and padding to ensure consistent spacing */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a black background to the entire page */
+body {
+    background-color: black;
+    color: #20C20E; /* Set text color to green */
+    font-family: "Fira Sans", sans-serif; /* Use Fira Sans font */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure the page takes the full viewport height */
+}
+
+/* Center-align the header and subheader text */
+header, section {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+/* Style the header (h1) */
+header h1 {
+    font-size: 2rem;
+}
+
+/* Style the subheader (h2) */
+section h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Style the main body paragraph (p) */
+section p {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+]
