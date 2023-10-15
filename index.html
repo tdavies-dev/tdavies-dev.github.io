@@ -51,8 +51,8 @@
             const headerElement = document.getElementById("header");
             const subheaderElement = document.getElementById("subheader");
             const mainTextElement = document.getElementById("mainText");
-            const linkedinTextElement = document.getElementById("linkedinText");
-            const githubTextElement = document.getElementById("githubText");
+            const linkedinElement = document.getElementById("linkedinText");
+            const githubElement = document.getElementById("githubText");
             const textElement = document.getElementById("typedText");
             const cursorElement = document.getElementById("cursor");
             
@@ -60,8 +60,19 @@
             typeText(headerElement, headerElement.textContent, 30);
             typeText(subheaderElement, subheaderElement.textContent, 30);
             typeText(mainTextElement, mainTextElement.textContent, 30);
-            typeText(linkedinTextElement, 'www.linkedin.com/in/tomos-davies-947a2a159', 30); // Set the text content here
-            typeText(githubTextElement, 'https://github.com/tdavies-dev', 30); // Set the text content here
+            
+            // Create and append anchor elements for LinkedIn and GitHub
+            function createLink(element, linkText, url) {
+                element.style.display = "block"; // Display the element before typing
+                element.textContent = ''; // Clear the initial content
+                const link = document.createElement("a");
+                link.href = url;
+                link.textContent = linkText;
+                element.appendChild(link);
+            }
+
+            createLink(linkedinElement, "https://www.linkedin.com/in/tomos-davies-947a2a159", "https://www.linkedin.com/in/tomos-davies-947a2a159");
+            createLink(githubElement, "https://github.com/tdavies-dev", "https://github.com/tdavies-dev");
 
             // Add the blinking cursor
             function blinkCursor() {

@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Fira'; /* You can choose any name you like */
-    src: url('FiraSans-Black.ttf')
+    font-family: 'Mona'; /* You can choose any name you like */
+    src: url('MonaSans-ExtraLight.ttf')
 }
 body, h1, h2, p {
     margin: 0;
@@ -10,8 +10,8 @@ body, h1, h2, p {
 /* Apply a black background to the entire page */
 body {
     background-color: black;
-    color: #20C20E; /* Set text color to green */
-    font-family: "Courier New", sans-serif; /* Use Fira Sans font */
+    color: white; /* Set text color to green */
+    font-family: "Mona", sans-serif; /* Use Fira Sans font */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,17 +28,20 @@ header, section {
 /* Style the header (h1) */
 header h1 {
     font-size: 2rem;
+    font-weight: lighter; /* Adjust the font weight to your preference */
 }
 
 /* Style the subheader (h2) */
 section h2 {
     font-size: 1.5rem;
     margin-top: 1rem;
+    font-weight: lighter; /* Adjust the font weight to your preference */
 }
 
 /* Style the main body paragraph (p) */
 section p {
     font-size: 1rem;
     margin-top: 1rem;
+    font-weight: lighter; /* Adjust the font weight to your preference */
 }
 
