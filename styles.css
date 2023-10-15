@@ -1,4 +1,7 @@
-/* Reset default margin and padding to ensure consistent spacing */
+@font-face {
+    font-family: 'Fira'; /* You can choose any name you like */
+    src: url('FiraSans-Black.ttf')
+}
 body, h1, h2, p {
     margin: 0;
     padding: 0;
@@ -8,7 +11,7 @@ body, h1, h2, p {
 body {
     background-color: black;
     color: #20C20E; /* Set text color to green */
-    font-family: "Fira Sans", sans-serif; /* Use Fira Sans font */
+    font-family: "Courier New", sans-serif; /* Use Fira Sans font */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,4 +42,3 @@ section p {
     margin-top: 1rem;
 }
 
-]

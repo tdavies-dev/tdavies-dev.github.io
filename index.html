@@ -9,13 +9,22 @@
         #header, #subheader, #mainText, #typedText {
             display: none; /* Hide all text initially */
         }
+
+        .terminal {
+            height: 3em; /* Set a fixed height for the terminal container */
+        }
     </style>
 </head>
 <body>
-    <h1 id="header">Tomos Davies - Portfolio Website</h1>
+    <h1 id="header">Tomos Davies</h1>
     <h2 id="subheader">Data Scientist</h2>
-    <p id="mainText">This is the main body text.</p>
+    <p id="mainText">Welcome to my website. <br>Please see below for some links to my work and profiles:</p>
 
+    <ul id="profileList">
+        <li><strong>LinkedIn:</strong><br><span id="linkedinText">www.linkedin.com/in/tomos-davies-947a2a159</span></li>
+        <li><strong>GitHub:</strong><br><span id="githubText">https://github.com/tdavies-dev</span></li>
+    </ul>
+    
     <div class="terminal">
         <div class="line">
             <p id="typedText"></p>
@@ -42,6 +51,8 @@
             const headerElement = document.getElementById("header");
             const subheaderElement = document.getElementById("subheader");
             const mainTextElement = document.getElementById("mainText");
+            const linkedinTextElement = document.getElementById("linkedinText");
+            const githubTextElement = document.getElementById("githubText");
             const textElement = document.getElementById("typedText");
             const cursorElement = document.getElementById("cursor");
             
@@ -49,7 +60,9 @@
             typeText(headerElement, headerElement.textContent, 30);
             typeText(subheaderElement, subheaderElement.textContent, 30);
             typeText(mainTextElement, mainTextElement.textContent, 30);
-            
+            typeText(linkedinTextElement, 'www.linkedin.com/in/tomos-davies-947a2a159', 30); // Set the text content here
+            typeText(githubTextElement, 'https://github.com/tdavies-dev', 30); // Set the text content here
+
             // Add the blinking cursor
             function blinkCursor() {
                 cursorElement.style.display = cursorElement.style.display === "none" ? "inline" : "none";
