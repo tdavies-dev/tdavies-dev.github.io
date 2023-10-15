@@ -18,14 +18,19 @@
 <body>
     <h1 id="header">Tomos Davies</h1>
     <h2 id="subheader">Data Scientist</h2>
-    <p id="mainText">Welcome to my website. <br>Please see below for some links to my work and profiles:</p>
+    <p id="mainText"></p>
 
-    <ul id="profileList">
-        <li><strong>LinkedIn:</strong><br><span id="linkedinText">www.linkedin.com/in/tomos-davies-947a2a159</span></li>
-        <li><strong>GitHub:</strong><br><span id="githubText">https://github.com/tdavies-dev</span></li>
-    </ul>
+    <div id="profileLogos">
+        <a href="https://github.com/tdavies-dev" target="_blank">
+            <img src="githublogo.png" alt="GitHub Logo" width="60" height="50" style="margin-right: 10px; margin-top: 10px;">
+        </a>
+        <a href="https://www.linkedin.com/in/tomos-davies-947a2a159" target="_blank">
+            <img src="linkedinlogo.png" alt="LinkedIn Logo" width="50" height="50">
+        </a>
+    </div>
+    
 
-    <p id="pretentiousness"><br>// <br> <br>Data is all around us. The majority of it is useless. A minority can change our lives. <br><br>As humans we have evolved to be natural data scientists. Our cognitive capabilities mean our brains are picking up thousands of stimuli every minute. We naturally focus only on those that are useful. <br><br>As we create our own digital world, data science is the name we've given to applying our natural discernment to the systems we've designed. <br><br>Successful utilisation of data means an enriched, efficient digital world; when we pick up the signal through the noise, we become the ultimate decision-makers. <br><br>Where should we go from here? <br><br>// <br></p>
+    <p id="pretentiousness"><br>// <br> <br>Data is all around us. The majority of it is useless. A minority of it can change our lives. <br><br>As humans we have evolved to be natural data scientists. Our cognitive capabilities mean our brains are picking up thousands of stimuli every minute. We naturally focus only on those that are useful. <br><br>As we create our own digital world, data science is the name we've given to applying our natural discernment to the systems we've designed. <br><br>Successful utilisation of data means an enriched, efficient digital world; when we pick up the signal through the noise, we become the ultimate decision-makers. <br><br>Where should we go from here? <br><br>// <br></p>
     
     <div class="terminal">
         <div class="line">
@@ -53,8 +58,6 @@
             const headerElement = document.getElementById("header");
             const subheaderElement = document.getElementById("subheader");
             const mainTextElement = document.getElementById("mainText");
-            const linkedinElement = document.getElementById("linkedinText");
-            const githubElement = document.getElementById("githubText");
             const textElement = document.getElementById("typedText");
             const cursorElement = document.getElementById("cursor");
             
@@ -63,18 +66,7 @@
             typeText(subheaderElement, subheaderElement.textContent, 30);
             typeText(mainTextElement, mainTextElement.textContent, 30);
             
-            // Create and append anchor elements for LinkedIn and GitHub
-            function createLink(element, linkText, url) {
-                element.style.display = "block"; // Display the element before typing
-                element.textContent = ''; // Clear the initial content
-                const link = document.createElement("a");
-                link.href = url;
-                link.textContent = linkText;
-                element.appendChild(link);
-            }
-
-            createLink(linkedinElement, "https://www.linkedin.com/in/tomos-davies-947a2a159", "https://www.linkedin.com/in/tomos-davies-947a2a159");
-            createLink(githubElement, "https://github.com/tdavies-dev", "https://github.com/tdavies-dev");
+           
 
             // Add the blinking cursor
             function blinkCursor() {
