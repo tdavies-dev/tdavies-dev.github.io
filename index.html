@@ -1,83 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tdavies-dev</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <style>
-        #header, #subheader, #mainText, #typedText {
-            display: none; /* Hide all text initially */
-        }
-
-        .terminal {
-            height: 3em; /* Set a fixed height for the terminal container */
-        }
-    </style>
-</head>
-<body>
-    <h1 id="header">Tomos Davies</h1>
-    <h2 id="subheader">Data Scientist</h2>
-    <p id="mainText"></p>
-
-    <div id="profileLogos">
-        <a href="https://github.com/tdavies-dev" target="_blank" style="text-decoration: none;">
-            <img src="githublogo.png" alt="GitHub Logo" width="60" height="50" style="margin-right: 10px; margin-top: 10px;">
-        </a>
-        <a href="https://www.linkedin.com/in/tomos-davies-947a2a159" target="_blank" style="text-decoration: none;">
-            <img src="linkedinlogo.png" alt="LinkedIn Logo" width="50" height="50">
-        </a>
-    </div>
-    
-    
-
-    <!-- <p id="pretentiousness"><br>// <br> <br>Data is all around us. The majority of it is useless. Only a small portion can truly impact our lives.<br><br>As humans we have evolved to be natural data scientists. Our cognitive capabilities mean our brains are picking up thousands of stimuli every minute. We naturally focus only on those that are useful. <br><br>Data science is the name we've given to applying our natural discernment to the systems we've designed. <br><br>When we pick up the signal through the noise, we become effective decision-makers. <br><br>So, where should we go from here? <br><br>// <br></p> -->
-    <p id="pretentiousness"><br>// <br>I'm a data scientist. <br><br>I kind of think all humans are data scientists. Our evolution has equipped us with the ability to discern meaningful patterns from the constant barrage of information surrounding us, and filter out what's not useful.<br><br>I apply that skill to digitised data with code. In doing so, I solve problems, expand our understanding, and increase our capacity for understanding.<br><br>// <br></p>
-    <div class="terminal">
-        <div class="line">
-            <p id="typedText"></p>
-            <span id="cursor">|</span>
-        </div>
-    </div>
-    <!-- More about me button -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="about.html" style="text-decoration: none; background-color: #000000; color: #fff; padding: 10px 20px; border-radius: 5px; border: 1px solid #fff;">More about me</a>
-    </div>
-    <script>
-        function typeText(element, text, speed) {
-            element.style.display = "block"; // Display the element before typing
-            element.textContent = ''; // Clear the initial content
-            let index = 0;
-            function type() {
-                if (index < text.length) {
-                    element.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const headerElement = document.getElementById("header");
-            const subheaderElement = document.getElementById("subheader");
-            const mainTextElement = document.getElementById("mainText");
-            const textElement = document.getElementById("typedText");
-            const cursorElement = document.getElementById("cursor");
-            
-            // Call the typewriter function for header, subheader, and mainText
-            typeText(headerElement, headerElement.textContent, 30);
-            typeText(subheaderElement, subheaderElement.textContent, 30);
-            typeText(mainTextElement, mainTextElement.textContent, 30);
-            
-           
-
-            // Add the blinking cursor
-            function blinkCursor() {
-                cursorElement.style.display = cursorElement.style.display === "none" ? "inline" : "none";
-            }
-            setInterval(blinkCursor, 500);
-        });
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
