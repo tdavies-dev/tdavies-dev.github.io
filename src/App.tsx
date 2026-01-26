@@ -1,44 +1,53 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin } from "lucide-react"
+import { Calendar, MapPin, Github, Linkedin } from "lucide-react"
 
 function App() {
   const experience = [
     {
-      title: "Data Scientist",
       organization: "UK Civil Service",
       type: "Full-time",
-      period: "Nov 2024 - Present",
       location: "Bristol, UK (Hybrid)",
-      description: "Building ML-powered applications and agentic AI systems using TypeScript (React) and Python (FastAPI, LangChain/LangGraph) in Azure. Data engineering for complex SysML architecture data. Presenting to senior government officials including in the Houses of Parliament and Lords.",
-      skills: ["Python", "TypeScript", "React", "FastAPI", "LangChain", "Azure", "ML/AI"]
+      roles: [
+        {
+          title: "Data Scientist",
+          period: "Nov 2024 - Present",
+          description: "Building ML-powered applications and agentic AI systems using TypeScript (React) and Python (FastAPI, LangChain/LangGraph) in Azure. Data engineering for complex SysML architecture data. Presenting to senior government officials including in the Houses of Parliament and Lords.",
+          skills: ["Python", "TypeScript", "React", "FastAPI", "LangChain", "Azure", "ML/AI"]
+        }
+      ]
     },
     {
-      title: "Data Analyst II",
       organization: "Government Statistical Service",
       type: "Full-time",
-      period: "Jul 2023 - Nov 2024",
       location: "Bristol, UK (Hybrid)",
-      description: "Management-level statistician responsible for Accredited Official Statistics published on gov.uk. Statistical modelling with R, FOI requests, Parliamentary Questions, and maintaining Power BI dashboards supporting medical specialists.",
-      skills: ["R", "Power BI", "SQL", "Statistics"]
+      roles: [
+        {
+          title: "Data Analyst",
+          period: "Jul 2023 - Nov 2024",
+          description: "Management-level statistician responsible for Accredited Official Statistics published on gov.uk. Statistical modelling with R, FOI requests, Parliamentary Questions, and maintaining Power BI dashboards supporting medical specialists.",
+          skills: ["R", "Power BI", "SQL", "Statistics"]
+        },
+        {
+          title: "Statistical Programmer",
+          period: "Dec 2020 - Jul 2023",
+          description: "Developed statistical reports and dashboards using R, RShiny, and Power BI for public sector stakeholders to influence medical policy and support high-level decision-making.",
+          skills: ["R", "RShiny", "Power BI", "SQL"]
+        }
+      ]
     },
     {
-      title: "Data Analyst I",
-      organization: "Government Statistical Service",
-      type: "Full-time",
-      period: "Dec 2020 - Jul 2023",
-      location: "Bristol, UK",
-      description: "Developed statistical reports and dashboards using R, RShiny, and Power BI for public sector stakeholders to influence medical policy and support high-level decision-making.",
-      skills: ["R", "RShiny", "Power BI", "SQL"]
-    },
-    {
-      title: "Research Scientist",
       organization: "University of Lincoln",
       type: "Internship",
-      period: "Jul 2019 - Aug 2019",
       location: "Lincoln, UK",
-      description: "Competitive UROS placement developing a 3D image processing pipeline in Python to streamline analysis of terabytes of micro-CT data.",
-      skills: ["Python", "Image Processing", "3D Analysis"]
+      roles: [
+        {
+          title: "Research Scientist",
+          period: "Jul 2019 - Aug 2019",
+          description: "Competitive UROS placement developing a 3D image processing pipeline in Python to streamline analysis of terabytes of micro-CT data.",
+          skills: ["Python", "Image Processing", "3D Analysis"]
+        }
+      ]
     }
   ]
 
@@ -60,6 +69,26 @@ function App() {
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
             Data Scientist and Software Engineer building full stack ML-powered applications and agentic AI systems
           </p>
+          <div className="flex justify-center gap-4 pt-4">
+            <a
+              href="https://www.linkedin.com/in/tomos-davies115/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="https://github.com/tdavies-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -68,37 +97,50 @@ function App() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Experience</h2>
           <div className="space-y-6">
-            {experience.map((job, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+            {experience.map((company, companyIndex) => (
+              <Card key={companyIndex} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                     <div className="flex-1">
-                      <CardTitle className="text-xl md:text-2xl">{job.title}</CardTitle>
+                      <CardTitle className="text-xl md:text-2xl">
+                        {company.roles.map((role, i) => (
+                          <span key={i}>
+                            {role.title}
+                            {i < company.roles.length - 1 && " & "}
+                          </span>
+                        ))}
+                      </CardTitle>
                       <CardDescription className="text-base mt-1">
-                        {job.organization} · {job.type}
+                        {company.organization} · {company.type}
                       </CardDescription>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-3 mt-3 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      <span>{job.period}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
                       <MapPin className="w-4 h-4" />
-                      <span>{job.location}</span>
+                      <span>{company.location}</span>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{job.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {job.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
+                <CardContent className="space-y-6">
+                  {company.roles.map((role, roleIndex) => (
+                    <div key={roleIndex} className={roleIndex > 0 ? "pt-6 border-t" : ""}>
+                      <div className="mb-3">
+                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <Calendar className="w-4 h-4" />
+                          <span>{role.period}</span>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground mb-4">{role.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {role.skills.map((skill, skillIndex) => (
+                          <Badge key={skillIndex} variant="secondary">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </CardContent>
               </Card>
             ))}
@@ -113,7 +155,7 @@ function App() {
           <Card>
             <CardContent className="pt-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Write a short paragraph about yourself and your interests here...
+                Big into nature, fitness, birdwatching, and pub quizzes. Bookworm - I love Vonnegut, Dostoyevsky, and the Dune series. Welsh speaker - o bydded i'r hen iaith barhau! Building and learning.
               </p>
             </CardContent>
           </Card>
