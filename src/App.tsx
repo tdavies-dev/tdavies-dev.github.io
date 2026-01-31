@@ -167,22 +167,24 @@ function App() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Projects</h2>
           <div className="grid gap-6 md:grid-cols-2">
-            {/* Placeholder project cards */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle>Project Title</CardTitle>
-                <CardDescription>Brief description of the project</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Add your project details here...
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">Tech 1</Badge>
-                  <Badge variant="secondary">Tech 2</Badge>
-                </div>
-              </CardContent>
-            </Card>
+            <a href="https://github.com/tdavies-dev/gutenshad" target="_blank" rel="noopener noreferrer" className="block">
+              <Card className="hover:shadow-lg transition-shadow h-full">
+                <CardHeader>
+                  <CardTitle>Gutenshad</CardTitle>
+                  <CardDescription>Browser-based e-reader for classic literature</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    A clean reading interface for the top 100 books on Project Gutenberg. Full-stack app with a Python backend and TypeScript/React frontend using shadcn.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">TypeScript</Badge>
+                    <Badge variant="secondary">React</Badge>
+                    <Badge variant="secondary">Python</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
