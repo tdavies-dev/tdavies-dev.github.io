@@ -58,7 +58,7 @@ function App() {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="flex justify-center mb-8">
             <img
-              src="/src/img/Tomos_Picture.jpeg"
+              src="/Tomos_Picture.jpeg"
               alt="Tomos Davies"
               className="w-48 h-48 rounded-full object-cover shadow-xl ring-4 ring-primary/20"
             />
